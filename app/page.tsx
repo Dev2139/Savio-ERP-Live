@@ -261,8 +261,39 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 sm:h-80 md:h-96 flex items-center justify-center text-gray-500">
-                  {heroData[currentHeroIndex].imageAlt}
+                <div className="w-full h-64 sm:h-80 md:h-96 flex items-center justify-center">
+                  {currentHeroIndex === 0 && (
+                    <img 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767434891/d4xfgxvnt5iwyditsy1a.png" 
+                      alt="Professional ERP/Mfg Visual" 
+                      width={600} 
+                      height={400}
+                      className="object-contain bg-white rounded"
+                    />
+                  )}
+                  {currentHeroIndex === 1 && (
+                    <img 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767435163/zifh2kxlueffzzumrr2f.png" 
+                      alt="Business Process Optimization" 
+                      width={600} 
+                      height={400}
+                      className="object-contain bg-white rounded"
+                    />
+                  )}
+                  {currentHeroIndex === 2 && (
+                    <img 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767435162/kpofhgwboymyqbmnn8gz.png" 
+                      alt="Manufacturing Workflow" 
+                      width={600} 
+                      height={400}
+                      className="object-contain bg-white rounded"
+                    />
+                  )}
+                  {currentHeroIndex !== 0 && currentHeroIndex !== 1 && currentHeroIndex !== 2 && (
+                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 sm:h-80 md:h-96 flex items-center justify-center text-gray-500">
+                      {heroData[currentHeroIndex].imageAlt}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -294,9 +325,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-1/2">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 sm:h-80 md:h-96 flex items-center justify-center text-gray-500">
-                  About Us Visual
-                </div>
+                <img 
+                  src="https://res.cloudinary.com/dsddldquo/image/upload/v1767435663/ukuj2te5stticd7x19hq.png" 
+                  alt="About Us Visual" 
+                  width={600} 
+                  height={400}
+                  className="w-full h-64 sm:h-80 md:h-96 object-contain bg-white rounded"
+                />
               </div>
               <div className="md:w-1/2">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">About <span className="text-red-600">SavioERP</span></h2>
@@ -342,7 +377,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <BarChart3 className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430532/vo5kyrcvi7f1w4t9rrml.png" 
+                    alt="Streamlined Operations" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Streamlined Operations</h3>
                 <p className="text-gray-700">
@@ -352,7 +393,13 @@ export default function Home() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <Zap className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430446/injxofbpykuwxppal6wn.png" 
+                    alt="Enhanced Efficiency" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Enhanced Efficiency</h3>
                 <p className="text-gray-700">
@@ -362,7 +409,13 @@ export default function Home() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <Shield className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430447/brc8la92jcagkoqwdm35.png" 
+                    alt="Improved Compliance" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Improved Compliance</h3>
                 <p className="text-gray-700">
@@ -372,7 +425,13 @@ export default function Home() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <TrendingUp className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430447/bkyjcox6uwfoc4nk2ayw.png" 
+                    alt="Data-Driven Decisions" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Data-Driven Decisions</h3>
                 <p className="text-gray-700">
@@ -382,7 +441,13 @@ export default function Home() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <Users className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430447/sbn6j22xf3mjsbwwbgaa.png" 
+                    alt="Scalable Growth" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Scalable Growth</h3>
                 <p className="text-gray-700">
@@ -392,7 +457,13 @@ export default function Home() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover-lift transition-all">
                 <div className="text-red-600 mb-4">
-                  <DollarSign className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767430446/cwpcsjt0h9mr2h2ycvvn.png" 
+                    alt="Cost Optimization" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Cost Optimization</h3>
                 <p className="text-gray-700">
@@ -416,52 +487,52 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-start">
-                  <div className="text-red-600 mr-4">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                      Vision
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Vision</h3>
-                    <p className="text-gray-700">
-                      To be the global leader in manufacturing ERP solutions, empowering enterprises to achieve operational excellence and sustainable growth through innovative technology and best-in-class service.
-                    </p>
-                  </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767431706/vl7zlbys8ssvefy3tqnm.png" 
+                    alt="Our Vision" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Vision</h3>
+                <p className="text-gray-700">
+                  To be the global leader in manufacturing ERP solutions, empowering enterprises to achieve operational excellence and sustainable growth through innovative technology and best-in-class service.
+                </p>
               </div>
               
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-start">
-                  <div className="text-red-600 mr-4">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                      Mission
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h3>
-                    <p className="text-gray-700">
-                      To deliver comprehensive, scalable ERP solutions that streamline manufacturing processes, enhance productivity, ensure compliance, and drive profitability for our clients worldwide.
-                    </p>
-                  </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767431707/yss434dubcjg2ppmd8jg.png" 
+                    alt="Our Mission" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h3>
+                <p className="text-gray-700">
+                  To deliver comprehensive, scalable ERP solutions that streamline manufacturing processes, enhance productivity, ensure compliance, and drive profitability for our clients worldwide.
+                </p>
               </div>
               
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-start">
-                  <div className="text-red-600 mr-4">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                      Philosophy
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Philosophy</h3>
-                    <p className="text-gray-700">
-                      We believe in partnering with our clients to drive sustainable growth through innovation, transparency, and commitment to excellence in everything we do.
-                    </p>
-                  </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767431706/ihst7cbvaka7lsghzkt6.png" 
+                    alt="Our Philosophy" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Philosophy</h3>
+                <p className="text-gray-700">
+                  We believe in partnering with our clients to drive sustainable growth through innovation, transparency, and commitment to excellence in everything we do.
+                </p>
               </div>
             </div>
             
@@ -469,9 +540,13 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-blue-900 mb-6">Our Core Values</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div className="text-center p-6">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4 flex items-center justify-center text-gray-500">
-                    Value
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767432330/tvqwznfkhumfcoy6csgo.png" 
+                    alt="Innovation" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 mx-auto mb-4 object-contain bg-white rounded"
+                  />
                   <h4 className="text-xl font-bold text-blue-900 mb-3">Innovation</h4>
                   <p className="text-gray-700">
                     We continuously innovate to provide cutting-edge solutions that meet evolving business needs.
@@ -479,9 +554,13 @@ export default function Home() {
                 </div>
                 
                 <div className="text-center p-6">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4 flex items-center justify-center text-gray-500">
-                    Value
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767432331/pg3l6exl0wkdc0dyyct8.png" 
+                    alt="Excellence" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 mx-auto mb-4 object-contain bg-white rounded"
+                  />
                   <h4 className="text-xl font-bold text-blue-900 mb-3">Excellence</h4>
                   <p className="text-gray-700">
                     We maintain the highest standards in our products, services, and customer relationships.
@@ -489,9 +568,13 @@ export default function Home() {
                 </div>
                 
                 <div className="text-center p-6">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4 flex items-center justify-center text-gray-500">
-                    Value
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767432330/qzthqcyfoexhq5bnxnhr.png" 
+                    alt="Integrity" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 mx-auto mb-4 object-contain bg-white rounded"
+                  />
                   <h4 className="text-xl font-bold text-blue-900 mb-3">Integrity</h4>
                   <p className="text-gray-700">
                     We build trust through transparency, honesty, and ethical business practices.
@@ -499,9 +582,13 @@ export default function Home() {
                 </div>
                 
                 <div className="text-center p-6">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4 flex items-center justify-center text-gray-500">
-                    Value
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767432330/ry7cfmnlldyqs88zxxx2.png" 
+                    alt="Partnership" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 mx-auto mb-4 object-contain bg-white rounded"
+                  />
                   <h4 className="text-xl font-bold text-blue-900 mb-3">Partnership</h4>
                   <p className="text-gray-700">
                     We work as an extension of your team to achieve your business goals.
@@ -530,7 +617,13 @@ export default function Home() {
                 onClick={() => openPopup('Inventory Module', inventorySubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Package className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433040/llwejjfotvc9heeodlav.png" 
+                    alt="Inventory Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Inventory Module</h3>
                 <p className="text-gray-700">
@@ -543,7 +636,13 @@ export default function Home() {
                 onClick={() => openPopup('Purchase Module', purchaseSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <ShoppingCart className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/rquzan2u0wq3asikpgkq.png" 
+                    alt="Purchase Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Purchase Module</h3>
                 <p className="text-gray-700">
@@ -556,7 +655,13 @@ export default function Home() {
                 onClick={() => openPopup('Sales Module', salesSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Settings className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/zj4ztuhjfghkarsd91oi.png" 
+                    alt="Sales Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Sales Module</h3>
                 <p className="text-gray-700">
@@ -569,7 +674,13 @@ export default function Home() {
                 onClick={() => openPopup('Outsource & Job Work Module', outsourceSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Wrench className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433036/zcbj2fguq3hfb3tg0gw5.png" 
+                    alt="Outsource & Job Work Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Outsource & Job Work</h3>
                 <p className="text-gray-700">
@@ -582,7 +693,13 @@ export default function Home() {
                 onClick={() => openPopup('Production Module', productionSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Shield className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433272/k6vfqkztizyej25ebb4i.png" 
+                    alt="Production Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Production Module</h3>
                 <p className="text-gray-700">
@@ -595,7 +712,13 @@ export default function Home() {
                 onClick={() => openPopup('Finance Module', financeSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <BarChart3 className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/oqnpu4djwuc0dm2f0js3.png" 
+                    alt="Finance Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Finance Module</h3>
                 <p className="text-gray-700">
@@ -608,7 +731,13 @@ export default function Home() {
                 onClick={() => openPopup('Marketing Module', marketingSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Users className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/evince0ivnsilgayzrbe.png" 
+                    alt="Marketing Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Marketing Module</h3>
                 <p className="text-gray-700">
@@ -621,7 +750,13 @@ export default function Home() {
                 onClick={() => openPopup('CRM Module', crmSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <FileText className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/clpbcr6zeunlpj5qtwje.png" 
+                    alt="CRM Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">CRM Module</h3>
                 <p className="text-gray-700">
@@ -634,7 +769,13 @@ export default function Home() {
                 onClick={() => openPopup('HR & Payroll Module', hrPayrollSubModules)}
               >
                 <div className="text-blue-600 mb-4">
-                  <Globe className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433037/tnxjmm2a2wkos9mraw8u.png" 
+                    alt="HR & Payroll Module" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">HR & Payroll Module</h3>
                 <p className="text-gray-700">
@@ -786,7 +927,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover-lift transition-all">
                 <div className="text-red-400 mb-4">
-                  <Shield className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433809/nix3nzvzqo3lgs5b33np.png" 
+                    alt="ERP Expertise" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3">ERP Expertise</h3>
                 <p className="text-blue-100">
@@ -796,7 +943,13 @@ export default function Home() {
               
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover-lift transition-all">
                 <div className="text-red-400 mb-4">
-                  <Users className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433809/mmtmd46yjjjzhhq4myan.png" 
+                    alt="Customer-Centric Approach" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Customer-Centric Approach</h3>
                 <p className="text-blue-100">
@@ -806,7 +959,13 @@ export default function Home() {
               
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover-lift transition-all">
                 <div className="text-red-400 mb-4">
-                  <Globe className="h-12 w-12" />
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767433810/zu0sm1pgle1hfkuqdtn9.png" 
+                    alt="Global Trust" 
+                    width={48} 
+                    height={48}
+                    className="h-12 w-12 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Global Trust</h3>
                 <p className="text-blue-100">
