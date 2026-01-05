@@ -58,6 +58,12 @@ const Header = () => {
             Clients
           </Link>
           <Link 
+            href="/careers" 
+            className={`text-gray-700 hover:text-blue-600 font-medium ${isActive('/careers') ? 'text-blue-600 border-b-2 border-red-600 pb-1' : ''}`}
+          >
+            Careers
+          </Link>
+          <Link 
             href="/contact" 
             className={`text-gray-700 hover:text-blue-600 font-medium ${isActive('/contact') ? 'text-blue-600 border-b-2 border-red-600 pb-1' : ''}`}
           >
@@ -115,6 +121,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Clients
+            </Link>
+            <Link 
+              href="/careers" 
+              className={`text-gray-700 hover:text-blue-600 font-medium ${isActive('/careers') ? 'text-blue-600 border-b-2 border-red-600 pb-1' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Careers
             </Link>
             <Link 
               href="/contact" 

@@ -264,29 +264,29 @@ export default function Home() {
                 <div className="w-full h-64 sm:h-80 md:h-96 flex items-center justify-center">
                   {currentHeroIndex === 0 && (
                     <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767434891/d4xfgxvnt5iwyditsy1a.png" 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635517/iib4liz25ydzftu00itc.png" 
                       alt="Professional ERP/Mfg Visual" 
                       width={600} 
                       height={400}
-                      className="object-contain bg-white rounded"
+                      className="object-contain rounded"
                     />
                   )}
                   {currentHeroIndex === 1 && (
                     <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767435163/zifh2kxlueffzzumrr2f.png" 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635194/ii4essfhugrcrr6tmbas.png" 
                       alt="Business Process Optimization" 
                       width={600} 
                       height={400}
-                      className="object-contain bg-white rounded"
+                      className="object-contain rounded"
                     />
                   )}
                   {currentHeroIndex === 2 && (
                     <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767435162/kpofhgwboymyqbmnn8gz.png" 
+                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635386/hc4xxnasn4quwaoznhcq.png" 
                       alt="Manufacturing Workflow" 
                       width={600} 
                       height={400}
-                      className="object-contain bg-white rounded"
+                      className="object-contain rounded"
                     />
                   )}
                   {currentHeroIndex !== 0 && currentHeroIndex !== 1 && currentHeroIndex !== 2 && (

@@ -30,9 +30,13 @@ export default function ClientsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436677/mg0muiufpduwzrrmxvh8.png" 
+                    alt="Manufacturing Industry" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Manufacturing</h3>
                 <p className="text-gray-700">
@@ -88,9 +92,13 @@ export default function ClientsPage() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436628/ttroe8clzpcaycniwde7.png" 
+                    alt="Engineering Industry" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Engineering</h3>
                 <p className="text-gray-700">
@@ -117,9 +125,13 @@ export default function ClientsPage() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436628/vkwicps2zyol7ujcff7n.png" 
+                    alt="Automotive Industry" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Automotive</h3>
                 <p className="text-gray-700">
@@ -175,11 +187,15 @@ export default function ClientsPage() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436677/bs7bjlsemwfy0fcou168.png" 
+                    alt="Healthcare and Hospital Industry" 
+                    width={64} 
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Additional Industries</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">Healthcare & Hospital</h3>
                 <p className="text-gray-700">
                   Electronics, Food & Beverage, Chemicals, and more specialized manufacturing sectors.
                 </p>
