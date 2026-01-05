@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     default: "SavioERP - Enterprise Resource Planning Solution",
     template: "%s | SavioERP - Comprehensive ERP Solution"
   },
-  description: "Comprehensive ERP solution for mid-to-large manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our enterprise-grade platform. Integrated modules for inventory, production, finance, HR, sales, and more.",
-  keywords: ["ERP", "Manufacturing", "Business Management", "Enterprise Software", "SavioERP", "Inventory Management", "Production Planning", "Finance Management", "HR Management", "Manufacturing ERP", "Business Automation", "Supply Chain", "CRM", "Financial Management", "Manufacturing Operations"],
+  description: "SavioERP: Leading ERP solution for manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our integrated modules for inventory, production, finance, HR, and more. Industry-specific ERP for automotive, pharmaceutical, engineering, and packaging sectors.",
+  keywords: ["ERP", "Manufacturing", "Business Management", "Enterprise Software", "SavioERP", "Inventory Management", "Production Planning", "Finance Management", "HR Management", "Manufacturing ERP", "Business Automation", "Supply Chain", "CRM", "Financial Management", "Manufacturing Operations", "Automotive ERP", "Pharmaceutical ERP", "Engineering ERP", "Packaging ERP", "ERP software India", "Manufacturing software", "Business solutions"],
   authors: [{ name: "SavioERP", url: "https://www.savioerp.com" }],
   creator: "SavioERP",
   publisher: "SavioERP",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "SavioERP - Enterprise Resource Planning Solution",
-    description: "Comprehensive ERP solution for mid-to-large manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our enterprise-grade platform.",
+    description: "Leading ERP solution for manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our integrated modules.",
     url: "https://www.savioerp.com",
     siteName: "SavioERP",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SavioERP - Enterprise Resource Planning Solution",
-    description: "Comprehensive ERP solution for mid-to-large manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our enterprise-grade platform.",
+    description: "Leading ERP solution for manufacturing enterprises. Streamline operations, improve efficiency, and scale your business with our integrated modules.",
     images: ["https://res.cloudinary.com/dsddldquo/image/upload/v1767434891/d4xfgxvnt5iwyditsy1a.png"],
   },
   robots: {

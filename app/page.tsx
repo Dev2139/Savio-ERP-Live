@@ -268,7 +268,7 @@ export default function Home() {
                       alt="Professional ERP/Mfg Visual" 
                       width={600} 
                       height={400}
-                      className="object-contain rounded"
+                      className="w-full h-full object-contain rounded"
                     />
                   )}
                   {currentHeroIndex === 1 && (
@@ -277,7 +277,7 @@ export default function Home() {
                       alt="Business Process Optimization" 
                       width={600} 
                       height={400}
-                      className="object-contain rounded"
+                      className="w-full h-full object-contain rounded"
                     />
                   )}
                   {currentHeroIndex === 2 && (
@@ -286,7 +286,7 @@ export default function Home() {
                       alt="Manufacturing Workflow" 
                       width={600} 
                       height={400}
-                      className="object-contain rounded"
+                      className="w-full h-full object-contain rounded"
                     />
                   )}
                   {currentHeroIndex !== 0 && currentHeroIndex !== 1 && currentHeroIndex !== 2 && (
