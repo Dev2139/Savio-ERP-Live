@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -17,6 +17,50 @@ interface JobPosting {
 export default function CareersPage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobPosting | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupOpen]);
+  
+  const handleJobSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/api/jobs', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        setSubmitMessage('Application submitted successfully! We will get back to you soon.');
+        form.reset();
+      } else {
+        setSubmitMessage(result.error || 'Failed to submit application. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('An error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   // Sample job postings data
   const jobPostings = [
@@ -438,10 +482,8 @@ export default function CareersPage() {
               {jobPostings.map((job) => (
                 <div 
                   key={job.id} 
-                  className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer relative overflow-hidden group"
+                  className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-600 transition-all duration-300 pointer-events-none"></div>
-                <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-opacity duration-300 animate-border-move"></div>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-blue-900">{job.title}</h3>
@@ -497,11 +539,11 @@ export default function CareersPage() {
       
       {/* Job Application Popup */}
       {isPopupOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
-            <div className="flex flex-col md:flex-row">
-              <div className="w-full md:w-2/3">
-                <div className="flex justify-between items-center mb-6 p-8 pt-8 pb-4">
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur z-50 p-4">
+          <div className="flex items-center justify-center min-h-full">
+            <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
+              <div className="w-full md:w-2/3 flex flex-col max-h-[80vh]">
+                <div className="flex justify-between items-center mb-4 p-6">
                   <h3 className="text-2xl font-bold text-blue-900">Apply for Position</h3>
                   <button 
                     onClick={() => setIsPopupOpen(false)}
@@ -512,25 +554,35 @@ export default function CareersPage() {
                     </svg>
                   </button>
                 </div>
-                <div className="bg-white p-8 pt-0 overflow-y-auto">
+                <div className="flex-1 overflow-y-auto p-6 pt-0">
                   <h4 className="text-xl font-semibold text-blue-800 mb-4">{selectedJob?.title}</h4>
                   
-                  <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {submitMessage && (
+                    <div className={`mb-4 p-3 rounded-lg ${submitMessage.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                      {submitMessage}
+                    </div>
+                  )}
+                  
+                  <form onSubmit={handleJobSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-1">Candidate Name</label>
+                      <label className="block text-gray-700 font-medium mb-1">Candidate Name *</label>
                       <input 
                         type="text" 
+                        name="candidateName"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your full name"
+                        required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-gray-700 font-medium mb-1">Email</label>
+                      <label className="block text-gray-700 font-medium mb-1">Email *</label>
                       <input 
                         type="email" 
+                        name="email"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your email"
+                        required
                       />
                     </div>
                     
@@ -538,18 +590,21 @@ export default function CareersPage() {
                       <label className="block text-gray-700 font-medium mb-1">Phone Number</label>
                       <input 
                         type="tel" 
+                        name="phone"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your phone number"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-gray-700 font-medium mb-1">Position Applied For</label>
+                      <label className="block text-gray-700 font-medium mb-1">Position Applied For *</label>
                       <input 
                         type="text" 
+                        name="positionApplied"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         value={selectedJob?.title || ''}
                         readOnly
+                        required
                       />
                     </div>
                     
@@ -557,6 +612,7 @@ export default function CareersPage() {
                       <label className="block text-gray-700 font-medium mb-1">Notice Period</label>
                       <input 
                         type="text" 
+                        name="noticePeriod"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="e.g., 30 days"
                       />
@@ -566,6 +622,7 @@ export default function CareersPage() {
                       <label className="block text-gray-700 font-medium mb-1">Current Location</label>
                       <input 
                         type="text" 
+                        name="currentLocation"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your current location"
                       />
@@ -575,6 +632,7 @@ export default function CareersPage() {
                       <label className="block text-gray-700 font-medium mb-1">Current Salary</label>
                       <input 
                         type="text" 
+                        name="currentSalary"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your current salary"
                       />
@@ -584,24 +642,29 @@ export default function CareersPage() {
                       <label className="block text-gray-700 font-medium mb-1">Expected Salary</label>
                       <input 
                         type="text" 
+                        name="expectedSalary"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your expected salary"
                       />
                     </div>
                     
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-1">Skill</label>
+                    <div className="md:col-span-2">
+                      <label className="block text-gray-700 font-medium mb-1">Resume</label>
                       <input 
-                        type="text" 
+                        type="file" 
+                        name="resume"
+                        accept=".pdf,.doc,.docx"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Enter your key skills"
+                        required
                       />
+                      <p className="text-sm text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</p>
                     </div>
                     
                     <div>
                       <label className="block text-gray-700 font-medium mb-1">Experience Year</label>
                       <input 
                         type="text" 
+                        name="experienceYear"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter years of experience"
                       />
@@ -609,10 +672,11 @@ export default function CareersPage() {
                     
                     <div className="md:col-span-2">
                       <button 
-                        type="button"
-                        className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center"
+                        type="submit"
+                        disabled={isSubmitting}
+                        className={`w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
-                        <span>Submit</span>
+                        <span>{isSubmitting ? 'Submitting...' : 'Submit Application'}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
@@ -622,7 +686,7 @@ export default function CareersPage() {
                 </div>
               </div>
               
-              <div className="w-full md:w-1/3 bg-red-50 p-6 overflow-y-auto">
+              <div className="w-full md:w-1/3 bg-red-50 p-6 overflow-y-auto max-h-[80vh]">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h3 className="text-xl font-bold text-blue-900 mb-4">Perks & Benefits</h3>
                   
