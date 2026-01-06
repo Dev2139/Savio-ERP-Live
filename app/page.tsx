@@ -261,39 +261,39 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <div className="w-full h-64 sm:h-80 md:h-96 flex items-center justify-center">
-                  {currentHeroIndex === 0 && (
-                    <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635517/iib4liz25ydzftu00itc.png" 
-                      alt="Professional ERP/Mfg Visual" 
-                      width={600} 
-                      height={400}
-                      className="w-full h-full object-contain rounded"
-                    />
-                  )}
-                  {currentHeroIndex === 1 && (
-                    <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635194/ii4essfhugrcrr6tmbas.png" 
-                      alt="Business Process Optimization" 
-                      width={600} 
-                      height={400}
-                      className="w-full h-full object-contain rounded"
-                    />
-                  )}
-                  {currentHeroIndex === 2 && (
-                    <img 
-                      src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635386/hc4xxnasn4quwaoznhcq.png" 
-                      alt="Manufacturing Workflow" 
-                      width={600} 
-                      height={400}
-                      className="w-full h-full object-contain rounded"
-                    />
-                  )}
-                  {currentHeroIndex !== 0 && currentHeroIndex !== 1 && currentHeroIndex !== 2 && (
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 sm:h-80 md:h-96 flex items-center justify-center text-gray-500">
-                      {heroData[currentHeroIndex].imageAlt}
+                <div className="w-full h-64 sm:h-80 md:h-96 overflow-hidden relative">
+                  <div 
+                    className="flex h-full transition-transform duration-1000 ease-in-out"
+                    style={{ transform: `translateX(-${currentHeroIndex * 100}%)` }}
+                  >
+                    <div className="w-full h-full flex-shrink-0 flex items-center justify-center">
+                      <img 
+                        src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635517/iib4liz25ydzftu00itc.png" 
+                        alt="Professional ERP/Mfg Visual" 
+                        width={600} 
+                        height={400}
+                        className="w-full h-full object-contain rounded"
+                      />
                     </div>
-                  )}
+                    <div className="w-full h-full flex-shrink-0 flex items-center justify-center">
+                      <img 
+                        src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635194/ii4essfhugrcrr6tmbas.png" 
+                        alt="Business Process Optimization" 
+                        width={600} 
+                        height={400}
+                        className="w-full h-full object-contain rounded"
+                      />
+                    </div>
+                    <div className="w-full h-full flex-shrink-0 flex items-center justify-center">
+                      <img 
+                        src="https://res.cloudinary.com/dsddldquo/image/upload/v1767635386/hc4xxnasn4quwaoznhcq.png" 
+                        alt="Manufacturing Workflow" 
+                        width={600} 
+                        height={400}
+                        className="w-full h-full object-contain rounded"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
