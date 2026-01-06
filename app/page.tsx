@@ -227,7 +227,9 @@ export default function Home() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight transition-opacity duration-500">
                   {currentHeroIndex === 0 && (
                     <>
-                      Streamline Your <span className="text-blue-900">Manufacturing</span> <span className="text-red-600">Operations</span> with <span className="text-red-600">SavioERP</span>
+                      Streamline Your<br />
+                      Manufacturing<br />
+                      with <span className="text-red-600">SavioERP</span>
                     </>
                   )}
                   {currentHeroIndex === 1 && (
