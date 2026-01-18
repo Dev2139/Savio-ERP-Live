@@ -24,7 +24,7 @@ A professional website built for SavioERP during my internship. This project sho
 1. Clone the repository
 2. Install dependencies with `npm install`
 3. Run the development server with `npm run dev`
-4. Visit [http://localhost:3000](http://localhost:3000)
+4. Visit [https://savio-erp-live.vercel.app](https://savio-erp-live.vercel.app)
 
 ## Pages
 
