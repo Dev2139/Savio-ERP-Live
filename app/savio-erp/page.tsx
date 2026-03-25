@@ -204,9 +204,11 @@ export default function SavioERPPage() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 md:h-96 flex items-center justify-center text-gray-500">
-                  ERP Modules Visual
-                </div>
+                <img
+                  src="https://res.cloudinary.com/dsddldquo/image/upload/v1774455975/ubkwbpit0kzdsoqysjqf.webp"
+                  alt="ERP Modules Visual"
+                  className="rounded-xl shadow-md object-contain w-full h-80 md:h-96"
+                />
               </div>
             </div>
           </div>

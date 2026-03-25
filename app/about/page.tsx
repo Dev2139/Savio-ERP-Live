@@ -22,9 +22,13 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="md:w-1/2">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 md:h-96 flex items-center justify-center text-gray-500">
-                  About Us Visual
-                </div>
+                <img 
+                  src="https://res.cloudinary.com/dsddldquo/image/upload/v1774455628/qq5gz7xnmdw60af1xiie.jpg" 
+                  alt="About Us Visual" 
+                  width={600} 
+                  height={400}
+                  className="w-full h-80 md:h-96 object-contain rounded-xl"
+                />
               </div>
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold text-blue-900 mb-6">Our Mission</h2>

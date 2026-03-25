@@ -63,9 +63,13 @@ export default function ClientsPage() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436691/ffozhhtu7tunuf4eev58.png"
+                    alt="Pharmaceutical Industry"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Pharmaceutical</h3>
                 <p className="text-gray-700">
@@ -158,9 +162,13 @@ export default function ClientsPage() {
               
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-blue-600 mb-4">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
-                    Icon
-                  </div>
+                  <img
+                    src="https://res.cloudinary.com/dsddldquo/image/upload/v1767436676/hyfgbic7ifp1tl13uzxr.png"
+                    alt="Packaging Industry"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain bg-white rounded"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">Packaging</h3>
                 <p className="text-gray-700">
@@ -232,55 +240,37 @@ export default function ClientsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                <div className="h-48 bg-gray-200 border-2 border-dashed w-full flex items-center justify-center text-gray-500">
-                  Success Story Visual
-                </div>
                 <div className="p-6">
                   <p className="text-gray-700 mb-4">
                     "SavioERP transformed our manufacturing operations. We've reduced operational costs by 25% and improved production efficiency by 40%."
                   </p>
-                  <div className="flex items-center">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-full w-12 h-12 mr-4" />
-                    <div>
-                      <h4 className="font-bold text-blue-900">John Smith</h4>
-                      <p className="text-gray-600">Operations Director, TechManufacturing Inc.</p>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900">John Smith</h4>
+                    <p className="text-gray-600">Operations Director, TechManufacturing Inc.</p>
                   </div>
                 </div>
               </div>
               
               <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                <div className="h-48 bg-gray-200 border-2 border-dashed w-full flex items-center justify-center text-gray-500">
-                  Success Story Visual
-                </div>
                 <div className="p-6">
                   <p className="text-gray-700 mb-4">
                     "The implementation was seamless, and the support team was exceptional. Our compliance reporting is now automated and error-free."
                   </p>
-                  <div className="flex items-center">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-full w-12 h-12 mr-4" />
-                    <div>
-                      <h4 className="font-bold text-blue-900">Sarah Johnson</h4>
-                      <p className="text-gray-600">CTO, PharmaSolutions Ltd.</p>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900">Sarah Johnson</h4>
+                    <p className="text-gray-600">CTO, PharmaSolutions Ltd.</p>
                   </div>
                 </div>
               </div>
               
               <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                <div className="h-48 bg-gray-200 border-2 border-dashed w-full flex items-center justify-center text-gray-500">
-                  Success Story Visual
-                </div>
                 <div className="p-6">
                   <p className="text-gray-700 mb-4">
                     "Since implementing SavioERP, our inventory accuracy has improved to 99.5% and our order fulfillment time has decreased by 30%."
                   </p>
-                  <div className="flex items-center">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-full w-12 h-12 mr-4" />
-                    <div>
-                      <h4 className="font-bold text-blue-900">Michael Chen</h4>
-                      <p className="text-gray-600">Supply Chain Manager, AutoParts Global</p>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900">Michael Chen</h4>
+                    <p className="text-gray-600">Supply Chain Manager, AutoParts Global</p>
                   </div>
                 </div>
               </div>
